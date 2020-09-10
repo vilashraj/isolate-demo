@@ -45,28 +45,30 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal:8.0, vertical:32.0),
-                    child: Container(
-                        height:50,
-                        child: LinearProgressIndicator()),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: txtField(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: submitButton(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(result,style: TextStyle(fontSize: 24,fontWeight: FontWeight.w700),),
-                  ),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal:8.0, vertical:32.0),
+                      child: Container(
+                          height:50,
+                          child: LinearProgressIndicator()),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: txtField(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: submitButton(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(result,style: TextStyle(fontSize: 24,fontWeight: FontWeight.w700),),
+                    ),
+                  ],
+                ),
               ),
             ),
             CustomPaint(
@@ -88,8 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
         shape: StadiumBorder(),
         textColor: Colors.red,
         onPressed: (){
-//          _getPrimeWithoutIsolate(int.parse(_controller.text.toString()));
-           _getPrimeWithIsolate(int.parse(_controller.text.toString()));
+          _getPrimeWithoutIsolate(int.parse(_controller.text.toString()));
+//           _getPrimeWithIsolate(int.parse(_controller.text.toString()));
         }
         );
   }
